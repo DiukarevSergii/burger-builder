@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Layout from './components/Layout/Layout';
+import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
@@ -8,9 +9,7 @@ class App extends Component {
     return (
       <div>
         <Layout>
-          <p>
-            Test
-          </p>
+          <BurgerBuilder />
         </Layout>
       </div>
     );
