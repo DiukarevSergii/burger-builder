@@ -5,9 +5,14 @@ import classes from './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = (props) => {
-  const transformedIngredients = Object.keys(props.ingredients)
+  let transformedIngredients = Object.keys(props.ingredients)
   // eslint-disable-next-line react/no-array-index-key
-    .map((key) => [...Array(props.ingredients[key])].map((_, i) => <BurgerIngredient key={key + i} type={key} />));
+    .map((key) => [...Array(props.ingredients[key])].map((_, i) => <BurgerIngredient key={key + i} type={key} />))
+    .reduce((arr, element) => arr.concat(element), []);
+
+  if (!transformedIngredients.length) {
+    transformedIngredients = <p>Please start addinf ingredients!</p>;
+  }
 
   return (
 
