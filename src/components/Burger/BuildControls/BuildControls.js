@@ -1,13 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const BuildControls = props => {
-  return (
-    <div>
+import classes from './BuildControls.css';
+import BuildControl from './BuildControl/BuildControl';
 
-    </div>
-  );
-};
+const controls = [
+  { label: 'Salad', type: 'salad' },
+  { label: 'Bacon', type: 'bacon' },
+  { label: 'Cheese', type: 'cheese' },
+  { label: 'Meat', type: 'meat' },
+];
+
+const BuildControls = () => (
+  <div className={classes.BuildControls}>
+    {controls.map((ctrl) => (
+      <BuildControl label={ctrl.length} key={ctrl.label} />
+    ))}
+  </div>
+);
 
 BuildControls.propTypes = {
 
