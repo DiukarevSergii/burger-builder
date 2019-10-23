@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './BurgerIngredient.css';
 
-const burgerIngredient = (props) => {
+const BurgerIngredient = (props) => {
   let ingredient = null;
 
   switch (props.type) {
@@ -18,16 +18,16 @@ const burgerIngredient = (props) => {
       );
       break;
     case ('meat'):
-      ingredient = <div className={classes.Meat}></div>;
+      ingredient = <div className={classes.Meat} />;
       break;
     case ('chees'):
-      ingredient = <div className={classes.Cheese}></div>;
+      ingredient = <div className={classes.Cheese} />;
       break;
     case ('bacon'):
-      ingredient = <div className={classes.Bacon}></div>;
+      ingredient = <div className={classes.Bacon} />;
       break;
     case ('salad'):
-      ingredient = <div className={classes.Salad}></div>;
+      ingredient = <div className={classes.Salad} />;
       break;
     default:
       ingredient = null;
@@ -35,4 +35,4 @@ const burgerIngredient = (props) => {
   return ingredient;
 };
 
-export default burgerIngredient;
+export default BurgerIngredient;
