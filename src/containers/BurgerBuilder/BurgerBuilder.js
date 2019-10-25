@@ -40,7 +40,8 @@ class BurgerBuilder extends Component {
 
     const priceAddition = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
-    const newPrice = oldPrice + priceAddition;
+    let newPrice = Number.parseFloat(oldPrice) + Number.parseFloat(priceAddition);
+    newPrice = newPrice.toFixed(2);
 
     this.setState({ totalPrice: newPrice, ingredients: updateIngredients });
     this.updatePurchaseState(updateIngredients);
@@ -59,7 +60,8 @@ class BurgerBuilder extends Component {
 
       const priceAddition = INGREDIENT_PRICES[type];
       const oldPrice = this.state.totalPrice;
-      const newPrice = oldPrice - priceAddition;
+      let newPrice = Number.parseFloat(oldPrice) - Number.parseFloat(priceAddition);
+      newPrice = newPrice.toFixed(2);
 
       this.setState({
         totalPrice: newPrice,
@@ -103,6 +105,7 @@ class BurgerBuilder extends Component {
             ingredients={this.state.ingredients}
             purchaseCanceled={this.purchaseCancelHandler}
             purchaseContinued={this.purchaseContinueHandler}
+            price={this.state.totalPrice}
           />
         </Modal>
         <Burger ingredients={this.state.ingredients} />

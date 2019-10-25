@@ -21,6 +21,7 @@ const OrderSummary = (props) => {
       <ul>
         {ingredientSummary}
       </ul>
+      <p><strong>Total Price: {props.price}</strong></p>
       <p>Continue to Checkout?</p>
       <Button btnType="Danger" clicked={props.purchaseCanceled}>CANCEL</Button>
       <Button btnType="Success" clicked={props.purchaseContinued}>CONTINUE</Button>
@@ -31,6 +32,7 @@ const OrderSummary = (props) => {
 OrderSummary.propTypes = {
   purchaseCanceled: PropTypes.func.isRequired,
   purchaseContinued: PropTypes.func.isRequired,
+  price: PropTypes.string.isRequired,
 };
 
 export default OrderSummary;
