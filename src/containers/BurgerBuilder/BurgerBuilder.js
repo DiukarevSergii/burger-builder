@@ -73,6 +73,11 @@ class BurgerBuilder extends Component {
     this.setState({ purchasing: true });
   };
 
+  purchaseCancelHandler = () => {
+    console.log('key was pressed');
+    this.setState({ purchasing: false });
+  };
+
   updatePurchaseState(ingredients) {
     const total = Object.values(ingredients)
       .reduce((sum, item) => sum + item, 0);
@@ -88,7 +93,7 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal show={this.state.purchasing}>
+        <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
