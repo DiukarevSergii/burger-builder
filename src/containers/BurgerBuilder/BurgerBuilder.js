@@ -76,12 +76,11 @@ class BurgerBuilder extends Component {
   };
 
   purchaseCancelHandler = () => {
-    console.log('key was pressed');
     this.setState({ purchasing: false });
   };
 
   purchaseContinueHandler = () => {
-    // eslint-disable-next-line no-undef
+    // eslint-disable-next-line no-alert, no-undef
     alert('You continue!');
   };
 

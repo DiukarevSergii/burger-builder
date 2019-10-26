@@ -13,6 +13,9 @@ const BuildControl = (props) => (
 
 BuildControl.propTypes = {
   label: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  removed: PropTypes.func.isRequired,
+  added: PropTypes.func.isRequired,
 };
 
 export default BuildControl;

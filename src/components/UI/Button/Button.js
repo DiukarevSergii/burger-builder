@@ -12,7 +12,7 @@ const Button = (props) => (
 );
 
 Button.propTypes = {
-  clicked: PropTypes.bool.isRequired,
+  clicked: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   btnType: PropTypes.string.isRequired,
 };
