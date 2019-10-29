@@ -1,13 +1,14 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import classes from './Toolbar.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
+import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
-const Toolbar = () => (
+const Toolbar = (props) => (
   <header className={classes.Toolbar}>
-    <div>MENU</div>
+    <DrawerToggle clicked={props.drawerToggleClicked} />
     <div className={classes.Logo}>
       <Logo />
     </div>
@@ -18,7 +19,7 @@ const Toolbar = () => (
 );
 
 Toolbar.propTypes = {
-
+  drawerToggleClicked: PropTypes.func.isRequired,
 };
 
-export default Toolbar;
+export default Toolbar; // Toolbar.js
