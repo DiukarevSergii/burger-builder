@@ -10,7 +10,7 @@
     text-decoration: none;
     width: 100%;
     box-sizing: border-box;
-    display: flex;
+    display: block;
 }
 
 .NavigationItem a:hover,
@@ -31,9 +31,8 @@
     .NavigationItem a {
         color: white;
         height: 100%;
+        padding: 16px 10px;
         border-bottom: 4px solid transparent;
-        box-sizing: border-box;
-        display: block;
     }
 
     .NavigationItem a:hover,
