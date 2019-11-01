@@ -22,7 +22,7 @@ const withErrorHandler = (WrappedComponent, axios) => class extends Component {
 
   errorConfirmedHandler = () => {
     this.setState({ error: null });
-  }
+  };
 
   render() {
     return (
